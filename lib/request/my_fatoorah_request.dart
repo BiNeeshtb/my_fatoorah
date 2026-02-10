@@ -129,6 +129,8 @@ class MyfatoorahRequest {
     switch (country) {
       case Country.SaudiArabia:
         return "https://api-sa.myfatoorah.com";
+      case Country.Qatar:
+        return "https://api-qa.myfatoorah.com";
       default:
         return "https://api.myfatoorah.com";
     }
