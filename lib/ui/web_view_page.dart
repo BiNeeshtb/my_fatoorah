@@ -191,25 +191,25 @@ class __WebViewPageState extends State<_WebViewPage>
                 (InAppWebViewController controller, int progress) {
               setProgress(progress);
             },
-            onAjaxProgress: (InAppWebViewController controller, request) async {
-              var e = request.event;
-              if (e != null) {
-                var p = (e.loaded! ~/ e.total!) * 100;
-                print(p);
-                setProgress(p);
-              }
-              return request.action!;
-            },
-            onAjaxReadyStateChange:
-                (InAppWebViewController controller, request) async {
-              print(request.event);
+            // onAjaxProgress: (InAppWebViewController controller, request) async {
+            //   var e = request.event;
+            //   if (e != null) {
+            //     var p = (e.loaded! ~/ e.total!) * 100;
+            //     print(p);
+            //     setProgress(p);
+            //   }
+            //   return request.action!;
+            // },
+            // onAjaxReadyStateChange:
+            //     (InAppWebViewController controller, request) async {
+            //   print(request.event);
 
-              if (request.readyState == AjaxRequestReadyState.OPENED)
-                setStart(request.url);
-              else
-                setStop(request.url);
-              return request.action;
-            },
+            //   if (request.readyState == AjaxRequestReadyState.OPENED)
+            //     setStart(request.url);
+            //   else
+            //     setStop(request.url);
+            //   return request.action;
+            // },
           ),
         ),
       ],
